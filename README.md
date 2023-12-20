@@ -15,6 +15,8 @@
 - `SCSS`
 - `Javascript`
 - `ES6`
+- `GULP`
+- `Visual Studio Code`
 
 ## 📌 사이트
 #### <a href="http://www.sejungahn.com/index.html" target="_blank">포트폴리오 사이트 바로가기</a>
