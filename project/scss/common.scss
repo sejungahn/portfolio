@@ -1,0 +1,128 @@
+@import 'font.css';
+@import '_reset';
+@import '_mixin';
+
+
+html {
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    font-size: 125%; // 20px
+    @include desktop {
+        font-size: 112.5%; //18px
+    }
+
+    @include tablet {
+        font-size: 100%; // 16px
+    }
+
+    @include mobile {
+        font-size: 87.5%; // 14px
+    }
+}
+
+body {
+    @extend html;
+    font-family: 'Malgun Gothic', sans-serif;
+    color: #333;
+}
+
+.blind {
+    @include blind;
+}
+// header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: rem(20) rem(25);
+    width: 100%;
+    z-index: 999;
+    box-sizing: border-box;
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        h1 {
+            a {
+                display: block;
+
+                font: {
+                    family: $primary-font;
+                    size: rem(26);
+                    weight: 900;
+                }
+
+                color: $white;
+                letter-spacing: rem(1.5);
+                text-shadow: 3px 3px 7px #8f8f8f;
+            }
+        }
+    }
+
+    &-util {
+        display: flex;
+
+        li {
+            margin-right: rem(15);
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                display: block;
+
+                i {
+                    font: {
+                        size: rem(30);
+                    }
+
+                    color: $white;
+                    text-shadow: 3px 3px 7px #8f8f8f;
+                }
+            }
+        }
+    }
+
+    &.on {
+        background: rgba(255, 255, 255, .4);
+
+        h1 {
+            a {
+                color: $black;
+            }
+        }
+
+        .header-util {
+            i {
+                color: $l-black;
+            }
+        }
+    }
+}
+
+// footer
+.footer {
+    &-inner {
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: rem(70) 0;
+        text-align: center;
+
+        .copyright {
+            font: {
+                family: $lato-font;
+                weight: 500;
+                size: rem(16);
+            }
+
+            line-height: rem(23);
+            color: $white;
+        }
+    }
+
+}
