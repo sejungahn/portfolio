@@ -29,14 +29,14 @@ gulp.task('html', function () {
         .pipe(livereload());
 });
 
-// @task : Script 병합,압축,min 파일 생성
-gulp.task('js:combine', function () {
-    return gulp.src(['project/js/main.js', 'project/js/common.js', 'project/js/sub.js'])
-        .pipe(uglify())
-        .pipe(concat('style.min.js'))
-        .pipe(gulp.dest(dist + '/js'))
-        .pipe(livereload());
-});
+// // @task : Script 병합,압축,min 파일 생성
+// gulp.task('js:combine', function () {
+//     return gulp.src(['project/js/main.js', 'project/js/common.js', 'project/js/sub.js'])
+//         .pipe(uglify())
+//         .pipe(concat('style.min.js'))
+//         .pipe(gulp.dest(dist + '/js'))
+//         .pipe(livereload());
+// });
 
 // @SCSS : SCSS Config(환경설정)
 var scssOptions = {
@@ -50,26 +50,26 @@ var scssOptions = {
 // @task : SCSS Compile & sourcemaps
 gulp.task('scss:compile', function () {
     return gulp
-        .src(src + paths.scss)
+        .src(paths.scss)
         .pipe(sourcemaps.init())
         .pipe(scss(scssOptions).on('error', scss.logError))
         .pipe(sourcemaps.write('/'))
-        .pipe(gulp.dest(dist + 'css'))
+        .pipe(gulp.dest('css/'))
         .pipe(livereload());
 });
 
-// @task : CSS min 파일 생성
-gulp.task('minifyCss', function(){
-     return gulp.src(dist + '/css/*.css')
-     .pipe(minifyCss({keepSpecialComments:1}))
-     .pipe(rename({ 
-            suffix: ".min" 
-        })) 
-     .pipe(gulp.dest(dist + 'css/min'));
-});
+// // @task : CSS min 파일 생성
+// gulp.task('minifyCss', function(){
+//      return gulp.src(dist + '/css/*.css')
+//      .pipe(minifyCss({keepSpecialComments:1}))
+//      .pipe(rename({ 
+//             suffix: ".min" 
+//         })) 
+//      .pipe(gulp.dest(dist + 'css/min'));
+// });
 
 // @task : livereload 실행
-gulp.task('live', gulp.series('html','scss:compile','js:combine','minifyCss'), function () {
+gulp.task('live', gulp.series('html','scss:compile'), function () {
      livereload.listen(
          { basePath: dist }
      )
@@ -78,9 +78,7 @@ gulp.task('live', gulp.series('html','scss:compile','js:combine','minifyCss'), f
 // @task : watch 파일 변경을 감지
 gulp.task('watch', function() {
     gulp.watch('./**/*.html', gulp.series('html'));
-    gulp.watch(paths.js, gulp.series('js:combine'));
     gulp.watch(paths.scss, gulp.series('scss:compile'));
-    gulp.watch(paths.min, gulp.series('minifyCss'));
 });
 
 
