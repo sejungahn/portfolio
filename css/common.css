@@ -1,0 +1,249 @@
+@import 'font.css';
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+article,
+aside,
+dialog,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+
+img, button {
+	border: 0;
+}
+
+button {
+	background-color: transparent;
+	cursor: pointer;
+}
+
+html, body {
+	height: 100%;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	font-size: 125%;
+}
+@media (max-width: 1024px) {
+	html, body {
+		font-size: 112.5%;
+	}
+}
+@media (max-width: 768px) {
+	html, body {
+		font-size: 100%;
+	}
+}
+@media (max-width: 480px) {
+	html, body {
+		font-size: 87.5%;
+	}
+}
+
+body {
+	font-family: "Malgun Gothic", sans-serif;
+	color: #333;
+}
+
+.blind {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: calc(20 / 20 * 1rem) calc(25 / 20 * 1rem);
+	width: 100%;
+	z-index: 999;
+	box-sizing: border-box;
+}
+.header-inner {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.header-inner h1 a {
+	display: block;
+	font-family: "Alegreya Sans SC", sans-serif;
+	font-size: calc(26 / 20 * 1rem);
+	font-weight: 900;
+	color: #fff;
+	letter-spacing: calc(1.5 / 20 * 1rem);
+	text-shadow: 3px 3px 7px #8f8f8f;
+}
+.header-util {
+	display: flex;
+}
+.header-util li {
+	margin-right: calc(15 / 20 * 1rem);
+}
+.header-util li:last-child {
+	margin-right: 0;
+}
+.header-util li a {
+	display: block;
+}
+.header-util li a i {
+	font-size: calc(30 / 20 * 1rem);
+	color: #fff;
+	text-shadow: 3px 3px 7px #8f8f8f;
+}
+.header.on {
+	background: rgba(255, 255, 255, 0.4);
+}
+.header.on h1 a {
+	color: #000;
+}
+.header.on .header-util i {
+	color: #333;
+}
+
+.footer-inner {
+	margin: 0 auto;
+	max-width: 1400px;
+	padding: calc(70 / 20 * 1rem) 0;
+	text-align: center;
+}
+.footer-inner .copyright {
+	font-family: "Lato", sans-serif;
+	font-weight: 500;
+	font-size: calc(16 / 20 * 1rem);
+	line-height: calc(23 / 20 * 1rem);
+	color: #fff;
+}
+/*# sourceMappingURL=common.css.map */
