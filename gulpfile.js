@@ -17,7 +17,7 @@ var src  = 'project/';
 var dist = 'project/dist/';
 var paths = {
     js : 'js/*.js',
-    scss : 'scss/*.scss',
+    scss : 'css/*.scss',
     min : dist + 'scss/*.scss'
 };
 
@@ -25,14 +25,7 @@ var paths = {
  // @task : HTML livereload 반영
 gulp.task('html', function () {
     return gulp
-        /**
-         * html 파일을 읽어오기 위해 경로 지정
-         */
         .src('*.html')
-
-        /**
-         * html 파일을 읽어온 후 livereload 호출하여 브라우저에 반영
-         */
         .pipe(livereload());
 });
 
